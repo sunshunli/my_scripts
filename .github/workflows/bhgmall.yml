@@ -25,4 +25,4 @@ jobs:
           npm install
       - name: '运行 【华联万柳签到脚本】'
         run: |
-          node --version
+          node test.js
