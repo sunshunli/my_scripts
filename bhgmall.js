@@ -12,7 +12,6 @@ if ($.isNode()) {
   Object.keys(bhgTokenNode).forEach((item) => {
     tokensArr.push(bhgTokenNode[item])
   })
-  if (process.env.JD_DEBUG && process.env.JD_DEBUG === 'false') console.log = () => {}
 } else {
   tokensArr.push($.getdata('CookieJD'))
   tokensArr.push($.getdata('CookieJD2'))
