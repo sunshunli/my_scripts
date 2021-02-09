@@ -1,6 +1,8 @@
 const qs = require('qs')
-const $ = new Env('金融打卡领年终奖')
 
+console.log(1)
+const $ = new Env('金融打卡领年终奖')
+console.log(2)
 const notify = $.isNode() ? require('./sendNotify') : ''
 //Node.js用户请在jdCookie.js处填写京东ck;
 const bhgTokenNode = $.isNode() ? require('./bhgAuth.js') : ''
