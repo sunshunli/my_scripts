@@ -23,8 +23,6 @@ jobs:
       - name: npm install
         run: |
           npm install
-      - name: 测试
-        run: node .\bhgmall.js
       - name: '运行 【华联万柳签到脚本】'
         run: |
-          node bhgmall.js
+          node --version
