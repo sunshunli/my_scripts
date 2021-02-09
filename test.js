@@ -1,5 +1,5 @@
 const qs = require('qs')
-const $ = require('./Env.min')
+const Env = require('./Env.min')
 
 console.log('hahahah')
 const $ = new Env('金融打卡领年终奖')
