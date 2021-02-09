@@ -1,0 +1,128 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: jd_bean_sign
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 16 * * *'
+  watch:
+    types: started
+  repository_dispatch:
+    types: bean_sgin
+jobs:
+  build:
+  
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          repository: sunshunli/my-scripts
+      - name: Use Node.js 10.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10.x
+      - name: npm install
+        run: |
+          npm install
+      - name: '运行 【京豆签到脚本】'
+        run: |
+          node jd_bean_sign.js
+      - name: '运行 【领京豆额外奖励】'
+        run: |
+          node jd_bean_home.js
+      - name: '运行 【京小超兑换奖品】'
+        run: |
+          node jd_blueCoin.js
+      - name: '运行 【口袋书店】'
+        run: |
+          node jd_bookshop.js
+      - name: '运行 【京东汽车兑换】'
+        run: |
+          node jd_car_exchange.js
+      - name: '运行 【京东汽车】'
+        run: |
+          node jd_car.js
+      - name: '运行 【签到领现金】'
+        run: |
+          node jd_cash.js
+      - name: '运行 【摇京豆脚本】'
+        run: |
+          node jd_club_lottery.js
+      - name: '运行 【疯狂的joy】'
+        run: |
+          node jd_crazy_joy_coin.js
+      - name: '运行 【疯狂的joy】'
+        run: |
+          node jd_crazy_joy.js
+      - name: '运行 【天天提鹅】'
+        run: |
+          node jd_daily_egg.js
+      - name: '运行 【京东家庭号】'
+        run: |
+          node jd_family.js
+      - name: '运行 【集鞭炮赢京豆】'
+        run: |
+          node jd_firecrackers.js
+      - name: '运行 【健康抽奖机】'
+        run: |
+          node jd_health.js
+      - name: '运行 【十元街】'
+        run: |
+          node jd_jdh.js
+      - name: '运行 【京东赚赚】'
+        run: |
+          node jd_jdzz.js
+      - name: '运行 【京东快递】'
+        run: |
+          node jd_kd.js
+      - name: '运行 【京东抽奖机】'
+        run: |
+          node jd_lotteryMachine.js
+      - name: '运行 【京东年货节】'
+        run: |
+          node jd_nh.js
+      - name: '运行 【京东炸年兽签到任务】'
+        run: |
+          node jd_nian_sign.js
+      - name: '运行 【炸年兽微信小程序】'
+        run: |
+          node jd_nian_wechat.js
+      - name: '运行 【京东炸年兽】'
+        run: |
+          node jd_nian.js
+      - name: '运行 【京东排行榜】'
+        run: |
+          node jd_rankingList.js
+      - name: '运行 【全民开红包脚本】'
+        run: |
+          node jd_redPacket.js
+      - name: '运行 【进店领豆脚本】'
+        run: |
+          node jd_shop.js
+      - name: '运行 【东东小窝脚本】'
+        run: |
+          node jd_small_home.js
+      - name: '运行 【十元街】'
+        run: |
+          node jd_syj.js
+      - name: '运行 【京喜签到】'
+        run: |
+          node jx_sign.js
+      - name: '运行 【京豆变动通知】'
+        run: |
+          node jd_bean_change.js
+        env:
+          JD_COOKIE: ${{ secrets.JD_COOKIE }}
+          JD_DEBUG: ${{ secrets.JD_DEBUG }}
+          PUSH_KEY: ${{ secrets.PUSH_KEY }}
+          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+          TG_USER_ID: ${{ secrets.TG_USER_ID }}
+          BARK_SOUND: ${{ secrets.BARK_SOUND }}
+          DD_BOT_TOKEN: ${{ secrets.DD_BOT_TOKEN }}
+          DD_BOT_SECRET: ${{ secrets.DD_BOT_SECRET }}
+          IGOT_PUSH_KEY: ${{ secrets.IGOT_PUSH_KEY }}

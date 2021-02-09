@@ -1,0 +1,28 @@
+{
+  "name": "LXK9301",
+  "version": "1.0.0",
+  "description": "{**When you're done, you can delete the content in this README and update the file with details for others getting started with your repository**}",
+  "main": "AlipayManor.js",
+  "scripts": {
+    "dev": "node ./jd_bean_home.js && node ./jd_blueCoin.js && node ./jd_bookshop.js && node ./jd_car_exchange.js && node ./jd_car.js && node ./jd_cash.js && node ./jd_club_lottery.js && node ./jd_crazy_joy_coin.js && node ./jd_crazy_joy.js && node ./jd_daily_egg.js && node ./jd_family.js && node ./jd_family.js && node ./jd_firecrackers.js && node ./jd_jdzz.js && node ./jd_kd.js && node ./jd_lotteryMachine.js && node ./jd_nh.js && node ./jd_nian_sign.js && node ./jd_nian_wechat.js && node ./jd_nian.js && node ./jd_rankingList.js && node ./jd_redPacket.js && node ./jd_shop.js && node ./jd_small_home.js && node ./jd_syj.js && node ./jx_sign.js && node ./jd_bean_change.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LXK9301/jd_scripts.git"
+  },
+  "keywords": [
+    "京东薅羊毛工具, 京东水果、宠物、种豆等等"
+  ],
+  "author": "LXK9301",
+  "license": "ISC",
+  "dependencies": {
+    "crypto-js": "^4.0.0",
+    "download": "^8.0.0",
+    "got": "^11.5.1",
+    "http-server": "^0.12.3",
+    "qs": "^6.9.6",
+    "request": "^2.88.2",
+    "tough-cookie": "^4.0.0",
+    "tunnel": "0.0.6"
+  }
+}
